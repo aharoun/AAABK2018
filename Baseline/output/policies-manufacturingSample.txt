@@ -1,0 +1,27 @@
+Baseline:
+     entry        R&D      fixed 
+    0.0000     0.0000     0.0000  rate
+    0.0000     0.0000     0.0000  cost
+
+    xEntry       xlow      xhigh     philow    phihigh    qminlow   qminhigh     Lrd2Ls        tau     growth    welfare
+    0.0171     0.0508     0.2969     0.2292     0.0463     2.1560     1.1870     0.2547     0.0425     0.0192     1.0000
+
+
+Social planner, full:
+     entry        R&D      fixed 
+    0.0000     0.0000     0.0000  rate
+    0.0000     0.0000     0.0000  cost
+
+    xEntry       xlow      xhigh     philow    phihigh    qminlow   qminhigh     Lrd2Ls        tau     growth    welfare
+    0.0195     0.0529     0.3503     0.1693     0.0663     2.5676     0.5643     0.3629     0.0517     0.0234     1.0188
+
+
+Optimal incumbent and operating policy:
+     entry        R&D      fixed 
+    0.0000     0.0735    -0.4108  rate
+    0.0000     0.0032    -0.0624  cost
+
+    xEntry       xlow      xhigh     philow    phihigh    qminlow   qminhigh     Lrd2Ls        tau     growth    welfare
+    0.0180     0.0572     0.3380     0.2034     0.0510     2.3344     1.4989     0.3117     0.0469     0.0212     1.0075
+
+

@@ -1,0 +1,8 @@
+     entry        R&D      fixed 
+    0.0000     0.0603    -0.6929  rate
+    0.0000     0.0034    -0.1091  cost
+
+    xEntry       xlow       xmed      xhigh     philow     phimed    phihigh    qminlow    qminmed   qminhigh     Lrd2Ls        tau     growth    welfare
+    0.0059     0.3135     0.4690     0.5083     0.4230     0.0650     0.0378     1.6922     1.5447     1.4930     0.2729     0.1882     0.0252     1.0181
+
+

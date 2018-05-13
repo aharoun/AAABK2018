@@ -1,0 +1,156 @@
+NONTARGETED MOMENTS:
+
+--------------------------------------------------------
+Panel A
+Employment growth of bottom 90%          0.011
+Employment growth of top 10%             0.016
+R&D to sales of bottom 90%               0.061
+R&D to sales of top 10%                  0.071
+
+Panel B
+R&D per employee ratio (high to low)     1.737
+Patent per employee (high to low)        1.578
+
+Panel C
+Productivity dist. - 75/25: small/young  1.328
+Productivity dist. - 75/25: small/old    1.231
+Productivity dist. - 75/25: large/young  1.150
+Productivity dist. - 75/25: large/old    1.087
+
+Panel D
+Add a product (or more)                  0.029
+Drop a product (or more)                 0.023
+Do both                                  0.917
+Do neither                               0.031
+--------------------------------------------------------
+
+
+PRODUCT LINE DIST.
+-------------------------------
+# of products      share
+         1         0.30
+         2         0.14
+         3         0.09
+         4         0.07
+         5         0.05
+         6         0.04
+         7         0.03
+         8         0.03
+         9         0.02
+       10+         0.23
+--------------------------------------------------------
+
+
+GROWTH DECOMPOSITION
+-------------------------------
+Within share                             0.607
+Between share                            -0.024
+Cross share                              0.240
+Entry share                              0.175
+Exit share                               0.003
+Net entry share                          0.178
+10-year Cumulative Growth                0.254
+NONTARGETED MOMENTS:
+
+--------------------------------------------------------
+Panel A
+Employment growth of bottom 90%          0.011
+Employment growth of top 10%             0.016
+R&D to sales of bottom 90%               0.061
+R&D to sales of top 10%                  0.071
+
+Panel B
+R&D per employee ratio (high to low)     1.737
+Patent per employee (high to low)        1.578
+
+Panel C
+Productivity dist. - 75/25: small/young  1.328
+Productivity dist. - 75/25: small/old    1.231
+Productivity dist. - 75/25: large/young  1.150
+Productivity dist. - 75/25: large/old    1.087
+
+Panel D
+Add a product (or more)                  0.029
+Drop a product (or more)                 0.023
+Do both                                  0.917
+Do neither                               0.031
+--------------------------------------------------------
+
+
+PRODUCT LINE DIST.
+-------------------------------
+# of products      share
+         1         0.30
+         2         0.14
+         3         0.09
+         4         0.07
+         5         0.05
+         6         0.04
+         7         0.03
+         8         0.03
+         9         0.02
+       10+         0.23
+--------------------------------------------------------
+
+
+GROWTH DECOMPOSITION
+-------------------------------
+Within share                             0.607
+Between share                            -0.024
+Cross share                              0.240
+Entry share                              0.175
+Exit share                               0.003
+Net entry share                          0.178
+10-year Cumulative Growth                0.254
+NONTARGETED MOMENTS:
+
+--------------------------------------------------------
+Panel A
+Employment growth of bottom 90%          0.011
+Employment growth of top 10%             0.016
+R&D to sales of bottom 90%               0.061
+R&D to sales of top 10%                  0.071
+
+Panel B
+R&D per employee ratio (high to low)     1.737
+Patent per employee (high to low)        1.578
+
+Panel C
+Productivity dist. - 75/25: small/young  1.328
+Productivity dist. - 75/25: small/old    1.231
+Productivity dist. - 75/25: large/young  1.150
+Productivity dist. - 75/25: large/old    1.087
+
+Panel D
+Add a product (or more)                  0.029
+Drop a product (or more)                 0.023
+Do both                                  0.917
+Do neither                               0.031
+--------------------------------------------------------
+
+
+PRODUCT LINE DIST.
+-------------------------------
+# of products      share
+         1         0.30
+         2         0.14
+         3         0.09
+         4         0.07
+         5         0.05
+         6         0.04
+         7         0.03
+         8         0.03
+         9         0.02
+       10+         0.23
+--------------------------------------------------------
+
+
+GROWTH DECOMPOSITION
+-------------------------------
+Within share                             0.607
+Between share                            -0.024
+Cross share                              0.240
+Entry share                              0.175
+Exit share                               0.003
+Net entry share                          0.178
+10-year Cumulative Growth                0.254

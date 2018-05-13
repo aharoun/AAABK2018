@@ -1,0 +1,8 @@
+Panel D
+Add a product (or more)                  0.030
+Drop a product (or more)                 0.022
+Do both                                  0.916
+Do neither                               0.032
+--------------------------------------------------------
+
+

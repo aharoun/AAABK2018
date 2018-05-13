@@ -1,0 +1,6 @@
+Panel C
+Productivity dist. - 75/25: small/young  1.332
+Productivity dist. - 75/25: small/old    1.244
+Productivity dist. - 75/25: large/young  1.148
+Productivity dist. - 75/25: large/old    1.094
+

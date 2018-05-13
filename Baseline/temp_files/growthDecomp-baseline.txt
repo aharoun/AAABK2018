@@ -1,0 +1,9 @@
+GROWTH DECOMPOSITION
+-------------------------------
+Within share                             0.607
+Between share                            -0.024
+Cross share                              0.240
+Entry share                              0.175
+Exit share                               0.003
+Net entry share                          0.178
+10-year Cumulative Growth                0.254

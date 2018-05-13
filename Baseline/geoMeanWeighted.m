@@ -1,0 +1,9 @@
+function out = geoMeanWeighted(seq,weight)
+% calculates weighted geometric mean
+
+out = exp(...
+		  sum(weight.*log(seq))/	...
+		  sum(weight)				...		
+		);
+
+end

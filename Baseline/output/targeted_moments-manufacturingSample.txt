@@ -1,0 +1,19 @@
+     model       data     #                    description     weight
+  0.036234   0.010800     1         empl_trans_large2small   1.000000
+  0.019870   0.009300     2         empl_trans_small2large   1.000000
+  0.530911   0.668700     3                      probSmall   1.000000
+  0.388115   0.425300     4                      share_5yr   1.000000
+  0.019213   0.019200     5               aggregate growth   5.000000
+  0.096073   0.080500     6           firm_exit_rate_s1_a1   1.000000
+  0.103467   0.058700     7           firm_exit_rate_s1_a2   1.000000
+  0.053699   0.036700     8           firm_exit_rate_s2_a2   1.000000
+  0.017048   0.017500    12     mean_ship_growth_s1_a1_def   1.000000
+  0.002124   0.000900    13     mean_ship_growth_s1_a2_def   1.000000
+ -0.058507   0.008400    14     mean_ship_growth_s2_a2_def   1.000000
+  0.017384   0.019500    15         mean_empl_growth_s1_a1   1.000000
+  0.009357  -0.003300    16         mean_empl_growth_s1_a2   1.000000
+ -0.054492  -0.008100    17         mean_empl_growth_s2_a2   1.000000
+  4.954673   5.035000    18     Fixed Cost-R&D Labor Ratio   1.000000
+
+score =   0.645627
+
