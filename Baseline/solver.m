@@ -43,10 +43,8 @@ function solver(save_params)
       g_ce  = eq.g;
       save(alg.eqce_file,'act_ce','g_ce','-ascii','-double');
       output();
-      f1 = ['temp_files' filesep 'policy.txt']; 
-      f2 = ['temp_files' filesep 'baseline-' alg.ptag '.txt'];
-      copyfile(f1,f2);
-      %system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'baseline-' alg.ptag '.txt']);
+
+      copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'baseline-' alg.ptag '.txt']);
 
       % save for social planner
       sp_params = [eq.qmin eq.x]';

@@ -15,8 +15,8 @@ function initalg(pid)
   [alg.chebBin,alg.w] = gaussCheb(4000,alg.qMinAll,alg.qMaxAll);  % Chebyshev nodes for integration
   alg.optDD           = ddeset('RelTol',1e-4','AbsTol',1e-6,'Stats','off');
   alg.optBVP          = bvpset('Vectorized','on','RelTol',1e-4,'AbsTol',1e-6,'Stats','off');
-  alg.optSolver       = optimset('Display','off','DiffMinChange',1e-8,'TolFun',1e-8, ...
-                       'TolX',1e-8,'UseParallel',false,'MaxFunEvals',200);
+  alg.optSolver       = optimset('Display','off','DiffMinChange',1e-12,'TolFun',1e-12, ...
+                       'TolX',1e-12,'UseParallel',false,'MaxFunEvals',200);
   
   % simulation parameters
   alg.qminfact     = 0.01;
@@ -49,12 +49,12 @@ function initalg(pid)
 
 
   % file names
-  alg.prm_file    = ['params/params-' alg.ptag  '.txt'];
-  alg.sprm_file   = ['temp_files/sparams-' alg.ptag '.txt'];
-  alg.eqv_file    = ['eqvars/eqvars-' alg.ptag  '.txt'];
-  alg.seqv_file   = ['temp_files/seqvars-' alg.ptag '.txt'];
-  alg.mmt_file    = ['moments/' alg.ptag 'Moments.csv'];
-  alg.eqce_file   = 'temp_files/ce_vars.txt';
+  alg.prm_file     = ['params' filesep 'params-' alg.ptag  '.txt'];
+  alg.sprm_file    = ['temp_files' filesep 'sparams-' alg.ptag '.txt'];
+  alg.eqv_file     = ['eqvars' filesep 'eqvars-' alg.ptag  '.txt'];
+  alg.seqv_file    = ['temp_files' filesep 'seqvars-' alg.ptag '.txt'];
+  alg.mmt_file     = ['moments' filesep alg.ptag 'Moments.csv'];
+  alg.eqce_file    = ['temp_files' filesep 'ce_vars.txt'];
   
 end
 

@@ -8,23 +8,23 @@ function run_pols()
   % baseline
   initpol();
   solver();
-  system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'baseline.txt']);
+  copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'baseline.txt']);
 
 
 
   fprintf('   Incumbent subsidy...')
   bin_search('inc_subs',0.14,cost_targ);
-  system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'incumbent_subs-' alg.ptag '.txt']);
+  copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'incumbent_subs-' alg.ptag '.txt']);
   fprintf('Done!\n')
   
   fprintf('   Operation subsidy...')
   bin_search('fixed_subs',0.04,cost_targ);
-  system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'fixed_subs-' alg.ptag '.txt']);
+  copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'fixed_subs-' alg.ptag '.txt']);
   fprintf('Done!\n')
 
   fprintf('   Entry subsidy...')
   bin_search('ent_subs',0.65,cost_targ);
-  system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'entry_subs-' alg.ptag '.txt']);
+  copyfile(['temp_files' filesep 'policy.txt'], ['temp_files' filesep 'entry_subs-' alg.ptag '.txt']);
   fprintf('Done!\n')
   fprintf('---\n')
 

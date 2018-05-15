@@ -44,9 +44,9 @@ function score = smmobj(parin)
       alg.lasteq = eqfin;
       alg.bestval = score;
       % reporting the best
-      system(['cp temp_files' filesep 'moments_format.txt temp_files' filesep 'moments_best.txt']);
-      system(['cp temp_files' filesep 'params_current.txt temp_files' filesep 'params_best.txt']);
-      system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'policy_best.txt']);
+      copyfile(['temp_files' filesep 'moments_format.txt'], ['temp_files' filesep 'moments_best.txt']);
+      copyfile(['temp_files' filesep 'params_current.txt'], ['temp_files' filesep 'params_best.txt']);
+      copyfile(['temp_files' filesep 'policy.txt'], ['temp_files' filesep 'policy_best.txt']);
     end
   end
 

@@ -8,7 +8,7 @@ function [eqfin,eqerr] = eqstand(params)
   end
 
   alg.final = 0;
-  options = optimset('Display','off','DiffMinChange',1e-8,'TolFun',1e-8,'UseParallel',false,'MaxFunEvals',100);
+  options = optimset('Display','off','DiffMinChange',1e-12,'TolFun',1e-12,'UseParallel',false,'MaxFunEvals',100);
   [eqfin,fval,exitflag] = fsolve(@eqfunc,alg.lasteq, options);
   
   if exitflag<1

@@ -25,7 +25,7 @@ function output
       eq.cev = nan;
   end
       
-  pol_fid = fopen('temp_files/policy.txt','w');
+  pol_fid = fopen(['temp_files' filesep 'policy.txt'],'w');
   fprintf(pol_fid,'%10s %10s %10s \n','entry','R&D','fixed');
   fprintf(pol_fid,'%10.4f %10.4f %10.4f  rate\n',p.ent_subs,p.inc_subs,p.fixed_subs);
   fprintf(pol_fid,'%10.4f %10.4f %10.4f  cost\n',ent_subs_cost,inc_subs_cost,fixed_subs_cost);

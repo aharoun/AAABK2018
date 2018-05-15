@@ -1,8 +1,6 @@
-
---------------------------------------------------------
 Panel A
-Employment growth of bottom 90%          0.011
-Employment growth of top 10%             0.016
-R&D to sales of bottom 90%               0.061
-R&D to sales of top 10%                  0.071
+Employment growth of bottom 90 perc.     0.011
+Employment growth of top 10 perc.        0.016
+R&D to sales of bottom 90 perc.          0.061
+R&D to sales of top 10 perc.             0.071
 

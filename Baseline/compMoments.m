@@ -7,7 +7,6 @@ function [score,moments] = compMoments()
     mex('firmsim.cpp');
     cd('..');
     copyfile(['mex' filesep 'firmsim.' mexext],['firmsim.' mexext]);
-    %system(['cp mex' filesep 'firmsim.' mexext ' .']);
   end
 
   % Reject if thetas are flipped

@@ -19,7 +19,7 @@ function eqnd = eqfunc(eqv)
   
 
   % equilibrium differences
-  eqnd(1)   = eq.skilled_labGross - p.Ls;                 % skilled labor market clearing
+  eqnd(1)   = eq.skilled_labGross - p.Ls;            % skilled labor market clearing
   eqnd(2:3) = eqi.cactiv     - eq.cactiv;            % product shares
   eqnd(4:5) = eqi.eyq        - eq.eyq;               % innovated product value
   eqnd(6)   = eq.qbarAct     - p.blam^(p.eps - 1);

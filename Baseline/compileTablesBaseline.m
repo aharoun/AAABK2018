@@ -11,55 +11,54 @@ function [] = compileTablesBaseline()
   %--------------------
   % Nontargeted moments
   %--------------------
-
+  
   fileName = ['output' filesep 'nontargeted_moments-' alg.ptag '.txt'];
-  system(['echo NONTARGETED MOMENTS: >>' fileName]);
-  system(['cat temp_files' filesep 'non_targetedPanelA-' alg.ptag '.txt >>' fileName]);
-  system(['cat temp_files' filesep 'non_targetedPanelB-' alg.ptag '.txt >>' fileName]);
-  system(['cat temp_files' filesep 'non_targetedPanelC-' alg.ptag '.txt >>' fileName]);
-  system(['cat temp_files' filesep 'non_targetedPanelD-' alg.ptag '.txt >>' fileName]);
-  system(['cat temp_files' filesep 'prodLineDist-' alg.ptag '.txt >>' fileName]);
-  system(['cat temp_files' filesep 'growthDecomp-' alg.ptag '.txt >>' fileName]);
+  list     = {'non_targetedPanelA','non_targetedPanelB','non_targetedPanelC','non_targetedPanelD',...
+              'prodLineDist','growthDecomp'};
+
+  fid      = fopen(fileName,'w');
+
+  for j = 1:length(list)
+    fir = fopen(['temp_files' filesep list{j} '-' alg.ptag '.txt']);
+    while (1)
+      line = fgets(fir);
+      if ~ischar(line)
+        break
+      end
+      fprintf(fid,[line]);
+    end
+  end
+
+  fclose(fid);
   
   %--------------------
   % Policies
   %--------------------
   fileName = ['output' filesep 'policies-' alg.ptag '.txt'];
-  system(['rm ' fileName]);
+  list     = {'baseline','incumbent_subs','fixed_subs','entry_subs',...
+              'socplanfull','socplanonlyQmin','socplanonlyX',...
+              'optpol11','optpol12','optpol13','optpol212'};
+  tit      = {'Baseline:','Incumbent subsidy 1%%:','Fixed cost subsidy 1%%:','Entry subsidy 1%%:',...
+              'Social planner, full:','Social planner, only qmin:','Social planner, only innovation:',...
+              'Optimal incumbent policy:','Optimal operating policy:','Optimal entrant policy:','Optimal incumbent and operating policy:'};                 
 
-  system(['echo Baseline: >>' fileName]);
-  system(['cat temp_files' filesep 'baseline-' alg.ptag '.txt >>' fileName]);
+  fid      = fopen(fileName,'w');
 
-  system(['echo Incumbent subsidy 1\%: >>' fileName]);
-  system(['cat temp_files' filesep 'incumbent_subs-' alg.ptag '.txt >>' fileName]);
+  for j = 1:length(list)
+    fir = fopen(['temp_files' filesep list{j} '-' alg.ptag '.txt']);
+    fprintf(fid,'\n');
+    fprintf(fid,tit{j});
+    fprintf(fid,'\n');
+    while (1)
+      line = fgets(fir);
+      if ~ischar(line)
+        break
+      end
+      fprintf(fid,[line]);
+    end
+  end
 
-  system(['echo Fixed cost subsidy 1\%: >>' fileName]);
-  system(['cat temp_files' filesep 'fixed_subs-' alg.ptag '.txt >>' fileName]);
-
-  system(['echo Entry subsidy 1\%: >>' fileName]);
-  system(['cat temp_files' filesep 'entry_subs-' alg.ptag  '.txt >>' fileName]);
-  
-  system(['echo Social planner, full: >>' fileName]);
-  system(['cat temp_files' filesep 'socplanfull-' alg.ptag '.txt >>' fileName]);
-  
-  system(['echo Social planner, only qmin: >>' fileName]);
-  system(['cat temp_files' filesep 'socplanonlyQmin-' alg.ptag '.txt >>' fileName]);
-  
-  system(['echo Social planner, only innovation: >>' fileName]);
-  system(['cat temp_files' filesep 'socplanonlyX-' alg.ptag '.txt >>' fileName]);
-  
-  system(['echo Optimal incumbent policy: >>' fileName]);
-  system(['cat temp_files' filesep 'optpol11-' alg.ptag '.txt >>' fileName]);
-  
-  system(['echo Optimal operating policy: >>' fileName]);
-  system(['cat temp_files' filesep 'optpol12-' alg.ptag '.txt >>' fileName]);
-  
-  system(['echo Optimal entrant policy: >>' fileName]);
-  system(['cat temp_files' filesep 'optpol13-' alg.ptag '.txt >>' fileName]);
-  
-  system(['echo Optimal incumbent and operating policy: >>' fileName]);
-  system(['cat temp_files' filesep 'optpol212-' alg.ptag '.txt >>' fileName]);
-
+  fclose(fid);
   % clean the temporary file folder
   % system('rm -rf temp_files/*'); 
   disp('Output is compiled. Results are under the folder "Output".');

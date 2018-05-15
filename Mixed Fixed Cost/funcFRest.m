@@ -1,4 +1,4 @@
-function v = funcFRestMatlab(t,y)
+function v = funcFRest(t,y)
     global  eq p 
 
     FH    = deval(eq.solFH,t);

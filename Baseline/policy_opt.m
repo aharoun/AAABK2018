@@ -5,7 +5,7 @@ function policy_opt(pol_type)
  % Initialize optimal policy search
   if (pol_type == 212)
     disp('Optimal Incumbent and Operation Policy...') 
-    pol0 = [0.1 0.1]; % (incumbent, operating)
+    pol0 = [0.05 0.05]; % (incumbent, operating)
   elseif (pol_type == 11)
     disp('Optimal Incumbent Policy...')
     pol0 = 0.1;  % (incumbent)  
@@ -36,16 +36,16 @@ function policy_opt(pol_type)
   
   if (pol_type == 212)
     copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol212-' alg.ptag '.txt']);
-    %system(['cp temp_files' filesep 'policy_bestOpt.txt temp_files' filesep 'optpol212-' alg.ptag '.txt']);
+
   elseif (pol_type == 11)
     copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol11-' alg.ptag '.txt']);
-    %system(['cp temp_files' filesep 'policy_bestOpt.txt temp_files' filesep 'optpol11-' alg.ptag '.txt']);
+
   elseif (pol_type == 12)
     copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol12-' alg.ptag '.txt']);
-    %system(['cp temp_files' filesep 'policy_bestOpt.txt temp_files' filesep 'optpol12-' alg.ptag '.txt']);
+
   elseif (pol_type == 13)
     copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol13-' alg.ptag '.txt']);
-    %system(['cp temp_files' filesep 'policy_bestOpt.txt temp_files' filesep 'optpol13-' alg.ptag '.txt']);
+
   end
 
   if (pol_type == 212)
@@ -126,7 +126,7 @@ function score = policy_obj(polin,pol_type)
       opt.bestval = score;
       opt.bestpol = pols;
       copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'policy_bestOpt.txt']);
-      %system(['cp temp_files' filesep 'policy.txt temp_files' filesep 'policy_bestOpt.txt']);
+
       fmt = repmat('%1.4f ',1,length(pols));
       fprintf(1,['  best score = %1.4f (s = ' fmt ')\n'],opt.bestval,opt.bestpol);
     end

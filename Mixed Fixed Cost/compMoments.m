@@ -6,7 +6,7 @@ function [score,moments] = compMoments()
     cd('mex');
     mex('firmsim.cpp');
     cd('..');
-    system(['cp mex/firmsim.' mexext ' .']);
+    copyfile(['mex' filesep 'firmsim.' mexext],['firmsim.' mexext]);
   end
 
   % Reject if thetas are flipped
@@ -294,7 +294,7 @@ function [score,moments] = compMoments()
   bigcell(:,4) = m_desc;
   bigcell(:,5) = num2cell(m_wgts);
 
-  fmfid = fopen('temp_files/moments_format.txt','w');
+  fmfid = fopen(['temp_files' filesep 'moments_format.txt'],'w');
 
   fprintf(fmfid,'%10s %10s %5s %30s %10s\n','model','data','#','description','weight');
   for i=1:nm
@@ -306,7 +306,7 @@ function [score,moments] = compMoments()
   fclose(fmfid);
 
   % save parameters used in simulation
-  writeParams('temp_files/params_current.txt',alg.pvec);
+  writeParams(['temp_files' filesep 'params_current.txt'],alg.pvec);
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % NON-TARGETED MOMENTS                                                        %

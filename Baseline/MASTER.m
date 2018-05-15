@@ -27,6 +27,7 @@ policy_opt(12);             % Optimal operation policy
 policy_opt(13);             % Optimal entrant policy
 policy_opt(212);            % Optimal incumbent and operation policy
 compileTablesBaseline();    % create tables under folder "Output"
+fprintf('\n\n\n');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all;
 
@@ -43,6 +44,7 @@ compMoments();                          % Firm simulation, targeted moments
 socplan_opt('full');                    % Social planner problem full
 policy_opt(212);                        % Optimal incumbent and operation policy
 compileTablesRobustness();              % create tables under folder "Output"
+fprintf('\n\n\n');
 %-------------------------------------------------------------------------------
 clear all;
 
@@ -54,6 +56,7 @@ compMoments();                          % Firm simulation, targeted moments
 socplan_opt('full');                    % Social planner problem full
 policy_opt(212);                        % Optimal incumbent and operation policy
 compileTablesRobustness();              % create tables under folder "Output"
+fprintf('\n\n\n');
 %-------------------------------------------------------------------------------
 clear all;
 

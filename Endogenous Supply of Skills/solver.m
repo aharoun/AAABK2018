@@ -44,7 +44,7 @@ function solver(save_params)
       Lp_ce  = eq.Lp;
       save(alg.eqce_file,'act_ce','g_ce','Lp_ce','-ascii','-double');
       output();
-      system('cp temp_files/policy.txt temp_files/baseline.txt');
+      copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'baseline-' alg.ptag '.txt']);
 
       % save for social planner
       sp_params = [eq.qmin eq.x(1) eq.xout eq.kappaStar]';

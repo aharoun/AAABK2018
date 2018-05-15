@@ -35,13 +35,17 @@ function policy_opt(pol_type)
   initpol();
   
   if (pol_type == 212)
-    system(['cp temp_files/policy_bestOpt.txt temp_files/optpol212-' alg.ptag '.txt']);
+    copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol212-' alg.ptag '.txt']);
+
   elseif (pol_type == 11)
-    system(['cp temp_files/policy_bestOpt.txt temp_files/optpol11-' alg.ptag '.txt']);
+    copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol11-' alg.ptag '.txt']);
+
   elseif (pol_type == 12)
-    system(['cp temp_files/policy_bestOpt.txt temp_files/optpol12-' alg.ptag '.txt']);
+    copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol12-' alg.ptag '.txt']);
+
   elseif (pol_type == 13)
-    system(['cp temp_files/policy_bestOpt.txt temp_files/optpol13-' alg.ptag '.txt']);
+    copyfile(['temp_files' filesep 'policy_bestOpt.txt'],['temp_files' filesep 'optpol13-' alg.ptag '.txt']);
+
   end
 
   if (pol_type == 212)
@@ -50,7 +54,7 @@ function policy_opt(pol_type)
     disp('Optimal Incumbent Policy... Done!') 
   elseif (pol_type == 12)
     disp('Optimal Operation Policy... Done!') 
-  elseif (pol_type == 18)
+  elseif (pol_type == 13)
     disp('Optimal Entrant Policy... Done!') 
   end
   fprintf('---\n')
@@ -121,7 +125,7 @@ function score = policy_obj(polin,pol_type)
       alg.lasteq = eqfin;
       opt.bestval = score;
       opt.bestpol = pols;
-      system('cp temp_files/policy.txt temp_files/policy_bestOpt.txt');
+      copyfile(['temp_files' filesep 'policy.txt'],['temp_files' filesep 'policy_bestOpt.txt']);
       fmt = repmat('%1.4f ',1,length(pols));
       fprintf(1,['  best score = %1.4f (s = ' fmt ')\n'],opt.bestval,opt.bestpol);
     end

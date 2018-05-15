@@ -8,7 +8,6 @@ function [] = nonTargetedMomP1P3()
     mex('firmsim.cpp');
     cd('..');
     copyfile(['mex' filesep 'firmsim.' mexext],['firmsim.' mexext]);
-    %system(['cp mex' filesep 'firmsim.' mexext ' .']);
   end
 
   % Reject if thetas are flipped
@@ -239,13 +238,11 @@ function [] = nonTargetedMomP1P3()
 
   fileName = ['temp_files' filesep 'non_targetedPanelA-' alg.ptag '.txt'];
   fid = fopen(fileName,'w');
-  fprintf(fid,'\n');
-  fprintf(fid,'--------------------------------------------------------\n');
   fprintf(fid,'Panel A\n');
-  fprintf(fid,'%-40s %1.3f\n', 'Employment growth of bottom 90%',ntmP.mean_empl_growthP23_empl_1);
-  fprintf(fid,'%-40s %1.3f\n', 'Employment growth of top 10%'   ,ntmP.mean_empl_growthP23_empl_2);
-  fprintf(fid,'%-40s %1.3f\n', 'R&D to sales of bottom 90%'     ,ntmP.mean_rnd_to_shipP2_empl_1);
-  fprintf(fid,'%-40s %1.3f\n', 'R&D to sales of top 10%'        ,ntmP.mean_rnd_to_shipP2_empl_2);
+  fprintf(fid,'%-40s %1.3f\n', 'Employment growth of bottom 90 perc.',ntmP.mean_empl_growthP23_empl_1);
+  fprintf(fid,'%-40s %1.3f\n', 'Employment growth of top 10 perc.'   ,ntmP.mean_empl_growthP23_empl_2);
+  fprintf(fid,'%-40s %1.3f\n', 'R&D to sales of bottom 90 perc.'     ,ntmP.mean_rnd_to_shipP2_empl_1);
+  fprintf(fid,'%-40s %1.3f\n', 'R&D to sales of top 10 perc.'        ,ntmP.mean_rnd_to_shipP2_empl_2);
   fprintf(fid,'\n');
   fclose(fid);
 

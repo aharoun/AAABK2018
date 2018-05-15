@@ -1,4 +1,4 @@
-function v = funcFHMatlab(t,y)
+function v = funcFH(t,y)
 global  eq p alg
 
 delayT 	= max(alg.qMinAll,p.alphaDelay*t - p.betaDelay);

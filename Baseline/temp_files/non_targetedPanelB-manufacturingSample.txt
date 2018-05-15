@@ -1,4 +1,4 @@
 Panel B
-R&D per employee ratio (high to low)     7.908
-Patent per employee (high to low)        5.160
+R&D per employee ratio (high to low)     7.876
+Patent per employee (high to low)        5.483
 

@@ -1,4 +1,4 @@
-function v = funcFMMatlab(t,y)
+function v = funcFM(t,y)
 global  eq p alg
 
 delayT 	= max(alg.qMinAll,p.alphaDelay*t - p.betaDelay);

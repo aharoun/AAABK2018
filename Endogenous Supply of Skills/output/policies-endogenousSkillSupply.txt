@@ -1,3 +1,4 @@
+
 Baseline:
      entry        R&D      fixed  education 
     0.0000     0.0000     0.0000     0.0000 rate
@@ -5,6 +6,7 @@ Baseline:
 
     xEntry       xlow      xhigh     philow    phihigh    qminlow   qminhigh     Lrd2Ls        tau     growth    welfare
     0.0051     0.2590     0.3813     0.5504     0.0628     1.4726     1.3033     0.1986     0.1716     0.0226     1.0000
+
 
 
 Optimal education policy:
@@ -16,21 +18,23 @@ Optimal education policy:
     0.0055     0.2746     0.4098     0.6002     0.0826     1.3397     1.1456     0.2203     0.2041     0.0269     1.1096
 
 
+
 Social planner, full:
      entry        R&D      fixed  education 
     0.0000     0.0000     0.0000     0.0000 rate
     0.0000     0.0000     0.0000     0.0000 cost
 
     xEntry       xlow      xhigh     philow    phihigh    qminlow   qminhigh     Lrd2Ls        tau     growth    welfare
-    0.0063     0.2681     0.4773     0.1613     0.4168     1.8875     0.2948     0.3393     0.2485     0.0328     1.1442
+    0.0063     0.2681     0.4773     0.1613     0.4168     1.8874     0.2886     0.3393     0.2484     0.0328     1.1442
+
 
 
 Optimal incumbent and operating policy:
      entry        R&D      fixed  education 
-    0.0000    -0.0310    -0.6193     0.9223 rate
-    0.0000    -0.0018    -0.0976     0.9223 cost
+    0.0000    -0.0305    -0.6187     0.9222 rate
+    0.0000    -0.0018    -0.0975     0.9222 cost
 
     xEntry       xlow      xhigh     philow    phihigh    qminlow   qminhigh     Lrd2Ls        tau     growth    welfare
-    0.0065     0.3132     0.4722     0.5058     0.1237     1.4701     1.2978     0.2810     0.2233     0.0294     1.1208
+    0.0065     0.3132     0.4722     0.5058     0.1236     1.4701     1.2978     0.2810     0.2233     0.0294     1.1208
 
 

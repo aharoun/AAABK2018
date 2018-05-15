@@ -21,10 +21,10 @@ function output
       eq.cev = nan;
   end
       
-  pol_fid = fopen('temp_files/policy.txt','w');
+  pol_fid = fopen(['temp_files' filesep 'policy.txt'],'w');
   fprintf(pol_fid,'%10s %10s %10s %10s \n','entry','R&D','fixed','education');
   fprintf(pol_fid,'%10.4f %10.4f %10.4f %10.4f rate\n',p.ent_subs,p.inc_subs,p.fixed_subs, p.edu_subs);
-  fprintf(pol_fid,'%10.4f %10.4f %10.4f %10.4f cost\n',ent_subs_cost,inc_subs_cost,fixed_subs_cost,p.edu_subs);
+  fprintf(pol_fid,'%10.4f %10.4f %10.4f %10.4f cost\n',ent_subs_cost,inc_subs_cost,fixed_subs_cost,edu_subs_cost);
   fprintf(pol_fid,'\n');
   fprintf(pol_fid,'%10s %10s %10s %10s %10s %10s %10s %10s %10s %10s %10s\n','xEntry','xlow','xhigh','philow','phihigh','qminlow','qminhigh','Lrd2Ls','tau','growth','welfare');
   fprintf(pol_fid,'%10.4f %10.4f %10.4f %10.4f %10.4f %10.4f %10.4f %10.4f %10.4f %10.4f %10.4f\n',eq.xout,eq.x(1),eq.x(2),eq.cactiv(1),eq.cactiv(2),eq.qmin(1),eq.qmin(2),(eq.crnd+eq.cout)/eq.skilled_lab,eq.tau,eq.g,eq.cev);

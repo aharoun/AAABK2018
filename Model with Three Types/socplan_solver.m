@@ -20,7 +20,7 @@ function [welf,cev,seqfin,seqerr] = socplan_solver(pvars,type)
 
   % solve socplan eq
   alg.final = 0;
-  options = optimset('Display','off','TolX',1e-8,'TolFun',1e-8,'UseParallel','never','TypicalX',seqv,'MaxFunEvals',100);
+  options = optimset('Display','off','TolX',1e-12,'TolFun',1e-12,'UseParallel','never','TypicalX',seqv,'MaxFunEvals',100);
   [seqfin,seqdiff,exitflag] = fsolve(@socplan_eqfunc,seqv,options);
 
   if exitflag<1

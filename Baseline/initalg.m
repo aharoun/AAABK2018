@@ -16,8 +16,8 @@ function initalg(pid)
  
   alg.optDD           = ddeset('RelTol',1e-4','AbsTol',1e-6,'Stats','off');
   alg.optBVP          = bvpset('Vectorized','on','RelTol',1e-4,'AbsTol',1e-6,'Stats','off');
-  alg.optSolver       = optimset('Display','off','DiffMinChange',1e-8,'TolFun',1e-8, ...
-                       'TolX',1e-8,'UseParallel',false,'MaxFunEvals',200);
+  alg.optSolver       = optimset('Display','off','DiffMinChange',1e-12,'TolFun',1e-12, ...
+                       'TolX',1e-12,'UseParallel',false,'MaxFunEvals',200);
   
   % simulation parameters
   alg.qminfact     = 0.01;
