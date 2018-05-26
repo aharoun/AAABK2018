@@ -1,0 +1,146 @@
+%% LyX 2.2.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=3cm,lmargin=4cm,rmargin=4cm}
+\setlength{\parindent}{0bp}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{booktabs}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\title{Code for ``Innovation, Reallocation and Growth'' }
+
+\author{Daron Acemoglu \ \ \  Ufuk Akcigit \ \ \  Harun Alp \\
+Nicholas Bloom \ \ \  William Kerr}
+
+\maketitle
+This file contains an overview of the code for replicating the results.
+It is implemented in \texttt{MATLAB}. There are 5 folders which refer
+to different versions of the model. Each folder includes a \texttt{\textcolor{magenta}{MASTER.m}}\texttt{
+}file which produces the results for the corresponding model. Final
+output is compiled, as they appear in the paper, under the subfolder
+\texttt{\textbf{\textcolor{purple}{output}}}. A more detailed description
+of the code is given below. 
+
+\bigskip{}
+
+
+\subsubsection*{Parameters}
+
+There are 13 parameters of the model, defined in the code as follows:
+
+\begin{table}[H]
+
+\centering{}%
+\begin{tabular}{rl}
+\toprule 
+\textbf{\textit{lam:}} & Innovation step size\tabularnewline
+\textbf{\textit{psi:}} & Exogenous destruction rate\tabularnewline
+\textbf{\textit{nu:}} & Transition rate from high-type to low-type\tabularnewline
+\textbf{\textit{alpha:}} & Probability of being high-type entrant\tabularnewline
+\textbf{\textit{phi:}} & Fixed cost of operation\tabularnewline
+\textbf{\textit{theta\_l:}} & Innovative capacity of low-type firms\tabularnewline
+\textbf{\textit{theta\_h:}} & Innovative capacity of high-type firms\tabularnewline
+\textbf{\textit{theta\_e:}} & Innovative capacity of entrants\tabularnewline
+\textbf{\textit{eps:}} & CES parameter\tabularnewline
+\textbf{\textit{disc:}} & Discount rate\tabularnewline
+\textbf{\textit{gamma:}} & Innovation elasticity for incumbents\tabularnewline
+\textbf{\textit{sigma:}} & Inverse of the intertemporal elasticity of substitution\tabularnewline
+\textbf{\textit{Ls:}} & Measure of high-skilled workers\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+Parameters are read from a text file under the subfolder \texttt{\textbf{\textcolor{purple}{params}}}.
+Global structure \textbf{\textit{p}} keeps parameter values currently
+being used, as well as policy values.
+
+\subsubsection*{Equilibrium solver}
+
+Equilibrium of the model can be characterized as a solution to a system
+of 6 equations in 6 unknowns: \textbf{(i)} wage rate {[}\textbf{\textit{ws}}{]},
+\textbf{(ii)} mass of active product lines owned by low type firms
+{[}\textbf{\textit{cactiv(1)}}{]}, \textbf{(iii)} mass of active product
+lines owned by high type firms {[}\textbf{\textit{cactiv(2)}}{]},
+\textbf{(iv)} expected value to a low type firm of a newly innovated
+product line {[}\textbf{\textit{eyq(1)}}{]}, \textbf{(v)} expected
+value to a high type firm of a newly innovated product line {[}\textbf{\textit{eyq(2)}}{]}
+and \textbf{(vi)} average quality {[}\textbf{\textit{qbar}}{]}. Global
+structure \textbf{\textit{eq}} stores all the relevant equilibrium
+objects and passes them over to different routines. Initial guess
+for the solution is logged under subfolder \texttt{\textbf{\textcolor{purple}{eqvars}}}. 
+
+\bigskip{}
+
+The following are the most important files for solving the equilibrium:
+\begin{itemize}
+\item \texttt{\textcolor{magenta}{initalg.m}}\textbf{:} It creates the global
+structure \textbf{\textit{alg }}that contains tuning parameters, binary
+switches and file names. 
+\item \texttt{\textcolor{magenta}{solver.m}}\textbf{:} It loads in model
+parameters, and initial guess for equilibrium variables and run \texttt{\textcolor{magenta}{fsolve}}
+on the equilibrium function in \texttt{\textcolor{magenta}{eqfunc.m}}. 
+\item \texttt{\textcolor{magenta}{eqfunc.m}}\textbf{:} It takes in guessed
+equilibrium variables and returns the equation errors which are calculated
+based on the following routines:
+\begin{itemize}
+\item \texttt{\textcolor{magenta}{innovation.m}}\textbf{:} It finds innovation
+rates (\textbf{\textit{x}}) and the minimum quality of a product line
+for each type of firms (\textbf{\textit{qmin}}).
+\item \texttt{\textcolor{magenta}{qualityDist.m}}\textbf{:} It solves the
+quality distribution and calculates the updated mass of active product
+lines.
+\item \texttt{\textcolor{magenta}{qbarActive.m}}\textbf{:} It computes the
+average quality of active product lines.
+\item \texttt{\textcolor{magenta}{calcey.m}}\textbf{:} It uses quality distribution
+to find updated expected product line values.
+\item \texttt{\textcolor{magenta}{labordem.m}}\textbf{:} Using innovation
+rates and wage rate, it finds labor demand.
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Estimation}
+
+Estimation routine is implemented in \texttt{\textcolor{magenta}{smm.m}}.
+This routine searches over the parameter space to minimize the distance
+between simulated and data moments. The objective function for the
+estimation is \texttt{\textcolor{magenta}{smmobj.m}} which takes the
+proposed parameter values, solves the model, simulates a panel of
+firms and calculates various moments of interest. Firm simulation
+and moment calculations are done in \texttt{\textcolor{magenta}{compMoments.m}},
+which itself calls the mex file \texttt{\textcolor{magenta}{firmsim.mexmaci64}}.
+This file is compiled from the source file \texttt{\textcolor{magenta}{firmsim.cpp}}
+(in \texttt{C++}, located under subfolder \texttt{\textbf{\textcolor{purple}{mex}}})
+for a Mac (64-bit) machine. The source file is needed to be recompiled
+for any other platform. To speed up the simulation, parallelization
+option is available, which can be controlled by the parameters in
+\texttt{\textcolor{magenta}{initalg.m}}. Finally, \texttt{\textcolor{magenta}{bootstrapSD.m}}
+computes standard errors for the estimated parameters based on bootstrap. 
+
+\subsubsection*{Optimal Policies}
+
+The social planners problem is solved in \texttt{\textcolor{magenta}{socplan\_opt.m}},
+which uses \texttt{\textcolor{magenta}{socplan\_solver.m}} and \texttt{\textcolor{magenta}{socplan\_eqfunc.m}}.
+For the baseline model, social planner's choice variables are: (i)
+minimum quality for low type firms {[}\textbf{\textit{qmin(1)}}{]},
+(ii) minimum quality for high type firms {[}\textbf{\textit{qmin(2)}}{]},
+(iii) innovation rate for low type firms {[}\textbf{\textit{x(1)}}{]},
+and (iv) innovation rate for high type firms {[}\textbf{\textit{x(2)}}{]}.\textcolor{magenta}{{}
+}\texttt{\textcolor{magenta}{run\_pols.m}} finds subsidy rate for
+different policies that corresponds to 1\% of GDP. Finally, optimal
+subsidy policy is run through \texttt{\textcolor{magenta}{policy\_opt.m}}.
+It searches over subsidy rates to maximize welfare.
+\end{document}
